@@ -18,17 +18,17 @@
 ## Код программы
 Программа реализована на языке Node.JS. Для ее запуска необходимо в терминале ввести команду «node <путь к файлу> <слово для поиска>».
 
-const fs = require('fs');
+    const fs = require('fs');
 
-const filePath = process.argv[2]; 
-const searchWord = process.argv[3]; 
+    const filePath = process.argv[2]; 
+    const searchWord = process.argv[3]; 
 
-if (!filePath || !searchWord) {
+    if (!filePath || !searchWord) {
     console.error('Ошибка! Пропущен аргумент');
     process.exit(1);
-}
+    }
 
-try {
+    try {
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     const words = fileContent.split(/\s+|[.,!?;:()"'-]+/).filter(Boolean);
     const totalWords = words.length;
@@ -46,9 +46,11 @@ try {
     );
 
 
-} catch (error) {
-    console.error('Ошибка! Файл не найден!');
-}
+    } catch (error) {
+        console.error('Ошибка! Файл не найден!');
+    }
+
+
 
 ## Пример работы програмы
 
